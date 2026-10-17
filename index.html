@@ -5,29 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Baby Shower de Piero</title>
 <meta name="robots" content="noindex">
+<style>
+  html,body{margin:0;min-height:100vh;background:#F7F1E8}
+</style>
 <script>
 (function () {
-  var ics = "baby-shower-piero.ics";
+  var title = "Baby Shower de Piero";
+  var details = "¡Estamos esperando a Piero!";
+  var place = "https://maps.app.goo.gl/7KzzcxxRYhGq4o7a7?g_st=iw";
+
+  // Google Calendar con el evento precargado (respaldo)
   var gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE"
-    + "&text=Baby%20Shower%20de%20Piero"
+    + "&text=" + encodeURIComponent(title)
     + "&dates=20261101T120000/20261101T160000"
     + "&ctz=America/Argentina/Buenos_Aires"
-    + "&details=%C2%A1Estamos%20esperando%20a%20Piero!"
-    + "&location=https%3A%2F%2Fmaps.app.goo.gl%2F7KzzcxxRYhGq4o7a7%3Fg_st%3Diw";
+    + "&details=" + encodeURIComponent(details)
+    + "&location=" + encodeURIComponent(place);
+
+  // Android: abre la pantalla "Nuevo evento" del calendario del celular
+  // 1/11/2026 12:00 a 16:00 hora Argentina (UTC-3)
+  var android = "intent:#Intent;"
+    + "action=android.intent.action.INSERT;"
+    + "type=vnd.android.cursor.dir/event;"
+    + "S.title=" + encodeURIComponent(title) + ";"
+    + "S.description=" + encodeURIComponent(details) + ";"
+    + "S.eventLocation=" + encodeURIComponent(place) + ";"
+    + "l.beginTime=1793545200000;"
+    + "l.endTime=1793559600000;"
+    + "S.browser_fallback_url=" + encodeURIComponent(gcal) + ";"
+    + "end";
+
   var ua = navigator.userAgent || "";
-  var apple = /iPhone|iPad|iPod|Macintosh/.test(ua);
-  location.replace(apple ? ics : gcal);
+  if (/iPhone|iPad|iPod|Macintosh/.test(ua)) {
+    location.replace("baby-shower-piero.ics");
+  } else if (/Android/.test(ua)) {
+    location.replace(android);
+    // si el navegador bloquea la apertura, pasa a Google Calendar
+    setTimeout(function () {
+      if (!document.hidden) location.replace(gcal);
+    }, 1800);
+  } else {
+    location.replace(gcal);
+  }
 })();
 </script>
-<style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-       background:#F7F1E8;color:#5B5048;font-family:system-ui,-apple-system,sans-serif;text-align:center}
-  a{color:#7FA9C4}
-</style>
 </head>
-<body>
-  <noscript>
-    <p><a href="baby-shower-piero.ics">Agregar al calendario</a></p>
-  </noscript>
-</body>
+<body></body>
 </html>
