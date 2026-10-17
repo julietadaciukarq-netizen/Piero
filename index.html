@@ -1,54 +1,33 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Baby Shower de Piero</title>
-  <meta name="description" content="Domingo 1 de noviembre de 2026, de 12:00 a 16:00 hs. ¡Estamos esperando a Piero!">
-  <meta name="theme-color" content="#F7F1E8">
-  <meta property="og:title" content="Baby Shower de Piero">
-  <meta property="og:description" content="Domingo 1 de noviembre · 12:00 a 16:00 hs">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baby Shower de Piero</title>
+<meta name="robots" content="noindex">
+<script>
+(function () {
+  var ics = "baby-shower-piero.ics";
+  var gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+    + "&text=Baby%20Shower%20de%20Piero"
+    + "&dates=20261101T120000/20261101T160000"
+    + "&ctz=America/Argentina/Buenos_Aires"
+    + "&details=%C2%A1Estamos%20esperando%20a%20Piero!"
+    + "&location=https%3A%2F%2Fmaps.app.goo.gl%2F7KzzcxxRYhGq4o7a7%3Fg_st%3Diw";
+  var ua = navigator.userAgent || "";
+  var apple = /iPhone|iPad|iPod|Macintosh/.test(ua);
+  location.replace(apple ? ics : gcal);
+})();
+</script>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       background:#F7F1E8;color:#5B5048;font-family:system-ui,-apple-system,sans-serif;text-align:center}
+  a{color:#7FA9C4}
+</style>
 </head>
 <body>
-  <main class="card">
-    <svg class="ornament" viewBox="0 0 120 40" aria-hidden="true">
-      <path d="M10 20 Q35 4 60 20 Q85 36 110 20" fill="none" stroke="currentColor" stroke-width="1.2"/>
-      <circle cx="60" cy="20" r="3.2" fill="currentColor"/>
-      <circle cx="30" cy="12.5" r="1.6" fill="currentColor"/>
-      <circle cx="90" cy="27.5" r="1.6" fill="currentColor"/>
-    </svg>
-
-    <p class="eyebrow">Te invitamos al</p>
-    <h1>Baby Shower<br><span>de Piero</span></h1>
-
-    <div class="divider" aria-hidden="true"></div>
-
-    <p class="date">Domingo 1 de noviembre de 2026</p>
-    <p class="time">12:00 a 16:00 hs</p>
-    <p class="message">¡Estamos esperando a Piero!</p>
-
-    <a class="btn-primary" href="baby-shower-piero.ics" type="text/calendar">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M3.5 9.5h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M12 12.5v5M9.5 15h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-      Agregar al calendario
-    </a>
-
-    <a class="btn-secondary" target="_blank" rel="noopener"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Baby%20Shower%20de%20Piero&amp;dates=20261101T120000/20261101T160000&amp;ctz=America/Argentina/Buenos_Aires&amp;details=%C2%A1Estamos%20esperando%20a%20Piero!&amp;location=https%3A%2F%2Fmaps.app.goo.gl%2F7KzzcxxRYhGq4o7a7%3Fg_st%3Diw">
-      Agregar a Google Calendar
-    </a>
-
-    <a class="link-map" target="_blank" rel="noopener" href="https://maps.app.goo.gl/7KzzcxxRYhGq4o7a7?g_st=iw">
-      Ver ubicación
-    </a>
-  </main>
+  <noscript>
+    <p><a href="baby-shower-piero.ics">Agregar al calendario</a></p>
+  </noscript>
 </body>
 </html>
